@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <title>Test1</title>
+</head>
+<body>
+    <div id="test"><h1>This is gonna be cool.</h1></div>
+    <br>
+
+    <div class="select">
+    <label for="colors">Choose a color:</label>
+    <select id="colors" onchange="colorFunc();">
+        <option value="red">Red</option>
+        <option value="blue" selected="selected">Blue</option>
+        <option value="yellow">Yellow</option>
+    </select>
+    <br>
+    </div>
+
+    <div class="select">
+    <label for="background">Choose background color:</label>
+    <select id="background" onchange="backgroundFunc();">
+        <option value="red" selected="selected">Red</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+    </select>
+    <br>
+    </div>
+
+    <div class="select">
+    <label for="cases">Choose a case:</label>
+    <select id="cases" onchange="caseFunc();">
+        <option value="uppercase" selected="selected">Uppercase</option>
+        <option value="lowercase">Lowercase</option>
+        <option value="capitalize">Capitalize</option>
+    </select>
+    <br>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+#test {
+    color: blue;
+    background-color: red;
+    text-transform: uppercase;
+    width: 610px;
+}
+
+body {
+    margin: 50px;
+    background-color: beige;
+}
+
+select {
+    margin: 10px;
+}
