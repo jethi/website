@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Git Blast Sheet</title>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Gelasio&family=Roboto&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+	<nav id="navbar">
+		<a class="button" href="/">Home</a>
+		<a class="button" href="../blog.html">Blog</a>
+		<a class="button" href="../doc.html">Doc</a>
+		<a class="button" href="../about.html">About</a>
+	</nav>
+	<div id="data">
+		<h1> Git Blast Sheet </h1>
+		<p>
+			Git feels like magic. Truly amazing tool. Best place to use is a UNIX-like system. You can also use 
+			<a href="https://git-scm.com/downloads" target="_blank">Git Bash</a> if you are using windows.
+		</p>
+		<hr>
+		<h2> Initial Setup </h2>
+		<p>
+			After installing git it needs to be configured. Something like 
+			this:
+		</p>
+		<pre class="code">
+			git config --global user.name "Arsh Jethi"
+			<br>
+			git config --global user.email "arshjethi@example.com"
+			<br>
+			git config --global --list
+		</pre>
+		<p>
+			Next, it is always nice to setup ssh for ease of use later. 
+			For that first we need to generate a set of asymmetric 
+			encryption keys:
+		</p>
+		<pre class="code">
+			ssh-keygen -t rsa
+		</pre>
+		<p>
+			This generates encryption keys of type that use an 
+			algorithm called rsa.
+		</p>
+		<pre class="code">
+			cat ~/.ssh/id_rsa.pub
+		</pre>
+		<p>
+			Now we can conveniently copy the 
+			public key and put it in the Settings>SSH section of our remote 
+			repository (likely Github or Gitlab). 
+		</p>
+		<hr>
+		<h2> New Local Repository </h2>
+		<p>
+			Initialize git in your project directory.
+		</p>
+		<pre class="code">
+			git init
+		</pre>
+		<p>
+			Add files to staging area. The dot add's all changed/added 
+			files. You can also stage individual files 
+			by naming them. The <a href="https://git-scm.com/docs/git-add#_options" target="_blank">options.</a>
+		</p>
+		<p>
+			You can create a file named .gitignore and list files in it 
+			that you don't want git to track.
+		</p>
+		<pre class="code">
+			git add .
+		</pre>
+		<p>
+			Commit what you added to staging area.
+		</p>
+		<pre class="code">
+			git commit -m 'message'
+		</pre>
+		<p>
+			Now, you can check status of your project directory.
+		</p>
+		<pre class="code">
+			git status
+		</pre>
+		<hr>
+		<h2> Link to remote repository. </h2>
+		<p>
+			Whatever we did so far was done on the local system. To sync
+			this project with a remote repository we must create a new 
+			repository in our remote host and then link this project 
+			with that. The SSH keys setup before authenticates us.
+			By default git creates branch named 'master'. While Github creates a branch named 'main'.
+			To change the master branch to main we use the next command.
+		</p>
+		<pre class="code">
+			git branch -M main
+			<br>
+			git remote add origin git@github.com:jethi/repo-name.git
+			<br>
+			git push -u origin main
+		</pre>
+		<p>
+			Origin is a standard alias for the repository used when talking
+			to remote repo.
+			The git push above has '-u' flag, which means set-upstream. It 
+			is necessary to add this flag for the first time to link to 
+			the remote repository. This enable argument-less use of several 
+			commands like git-pull. I highly recommend reading the 
+			<a href="https://git-scm.com/docs" target="_blank">documentation.</a>
+		</p>
+		<p>
+			Now, you can simply send the changes done in the recent commit to
+			the remote repo by a simple.
+		</p>
+		<pre class="code">
+			git push
+		</pre>
+		<p>
+			You can also fetch changes done in the repo by a fellow collaborator.
+		</p>
+		<pre class="code">
+			git pull
+		</pre>
+		<p>
+			Cloning a remote repo. You can clone a open-source remote 
+			repository on you system easily and even fetch changes done 
+			to the repo. 
+		</p>
+		<pre class="code">
+			git clone repository-url
+		</pre>
+		<p>
+			The repo cloned above would already be linked to upstream.
+			But you can't push changes in it without appropiate
+			permissions. You can always make a pull request though.
+		</p>
+		<hr>
+		<h2> You did a mistake ? </h2>
+		<p>
+			If you added changes to staging area from mistake, you can 
+			unstage them like this:
+		</p>
+		<pre class="code">
+			git reset HEAD file-name
+		</pre>
+		<p>
+			We can also discard changes to a file done in a recent commit.
+		</p>
+		<pre class="code">
+			git checkout -- file-name
+		</pre>
+		<p>
+			Delete a file being tracked.
+		</p>
+		<pre class="code">
+			git rm file-name
+		</pre>
+		<p>
+			Rename a file being tracked.
+		</p>
+		<pre class="code">
+			git mv initial-name new-name
+		</pre>
+		<hr>
+		<h2> The power of git </h2>
+		<p>
+			You can check your previous commits and revert to any of them. 
+			This can also be done for a single file. How cool is that ?
+		</p>
+		<p>
+			git log helps us do that.
+		</p>
+		<pre class="code">
+			git help log
+		</pre>
+		<p>
+			Some ways to see previous commits.
+		</p>
+		<pre class="code">
+			git log
+			<br>
+			git log --abbrev-commit
+			<br>
+			git log --oneline --graph --decorate
+			<br>
+			git log hash-from hash-to
+			<br>
+			git log --since="1 day ago"
+		</pre>
+		<hr>
+		<h2> Branches </h2>
+		<p>
+			Basic stuff. I recommend learning more from the documentation.
+		</p>
+		<p>
+			How to create a branch ? First let's list all branches.
+		</p>
+		<pre class="code">
+			git branch
+			<br>
+			git branch -a
+		</pre>
+		<p>
+			The '-a' flag lists all branches local + remote. 'master' is the 
+			default branch.
+		</p>
+		<p>
+			Creating a new branch:
+		</p>
+		<pre class="code">
+			git branch name-of-new-branch
+		</pre>
+		<p>
+			To switch to another branch we use the term 'checkout'.
+		</p>
+		<pre class="code">
+			git checkout other-branch
+		</pre>
+		<p>
+			We can also create and switch to a branch in one command:
+		</p>
+		<pre class="code">
+			git checkout -b new-branch-name
+		</pre>
+		<p>
+			Rename a branch:
+		</p>
+		<pre class="code">
+			git branch -m old-name new-name
+		</pre>
+		<p>
+			Deleting a branch:
+			<br>
+			Note: A branch you are currently on cannot be deleted.
+		</p>
+		<pre class="code">
+			git branch -d name-of-branch
+		</pre>
+		<p>
+			Merging branches:
+			<br>
+			Note: The branch name supplied below gets merged into 
+			the branch you are currently checked-in on.
+		</p>
+		<pre class="code">
+			git merge branch-name
+		</pre>
+		<hr>
+		<p>
+			That's it for now. Make sure you read more about branches, 
+			merging, merging vs rebasing and diff. Keep learning !!!
+		</p>
+	</div>
+	<footer>
+		<p id="bottomtext">
+			&#169 2020 Arsh Jethi
+		</p>
+	<footer>
+</body>
+</html>

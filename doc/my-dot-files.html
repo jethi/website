@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Dot Files</title>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Gelasio&family=Roboto&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+	<nav id="navbar">
+		<a class="button" href="/">Home</a>
+		<a class="button" href="../blog.html">Blog</a>
+		<a class="button" href="../doc.html">Doc</a>
+		<a class="button" href="../about.html">About</a>
+	</nav>
+	<div id="data">
+		<h1> My Dot Files </h1>
+		<p>
+			.bashrc, .profile and some other config files can be found here.
+		</p>
+		<hr>
+        <h2> .bashrc  </h2>
+        <p>
+            A simple getgo [verison] is what I use to update my go installation. Works like charm so far.
+        </p>
+		<pre class="code">
+			function getgo() {<br>
+                wget -P /tmp/ https://dl.google.com/go/go"$@".linux-amd64.tar.gz<br>
+                rm -rf ~/.local/go<br>
+                tar -C ~/.local -xzf /tmp/go"$@".linux-amd64.tar.gz<br>
+                rm -rf /tmp/go"$@".linux-amd64.tar.gz<br>
+                go version<br>
+            }<br>
+            alias g='amfora'<br>
+        </pre>
+        <hr>
+        <h2> .profile </h2>
+        <p>
+            I usually place binaries like micro, amfora, youtube-dl in ~./local/bin (labeled as General below)
+        </p>
+        <pre class="code">
+            # Go<br>
+            export PATH=$PATH:~/.local/go/bin
+            <br>
+            export GOPATH=$HOME/go
+            <br><br>
+            # General
+            <br>
+            export PATH=$PATH:~/.local/bin
+            <br><br>
+            # Flutter
+            <br>
+            export PATH=$PATH:~/.local/flutter/bin
+            <br>
+        </pre>
+        <hr>
+        <h2> amfora </h2>
+        <p>
+            I use amfora for Gemini. But I don't like its default color scheme.
+        </p>
+        <pre class="code">
+            bg = "#ffffd7"<br>
+            regular_text = "#808080"<br>
+            quote_text = "#808080"<br>
+            preformatted_text = "#808080"<br>
+            list_text = "#808080"<br>
+            hdg_1 = "#5f5f87"<br>
+            hdg_2 = "#5f5faf"<br>
+            hdg_3 = "#5f5fd7"<br>
+            amfora_link = "#875fd7"<br>
+            foreign_link = "#ff5f87"<br>
+        </pre>
+		<hr>
+		<p>
+			That's all folks.
+		</p>
+	</div>
+	<footer>
+		<p id="bottomtext">
+			&#169 2020 Arsh Jethi
+		</p>
+	<footer>
+</body>
+</html>
