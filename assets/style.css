@@ -1,64 +1,66 @@
-html {
-	margin: 0;
-	padding: 0;
-	background-color: #F2F2F2;
-}
+/* Text Dark: #3B3B46, Light: #4C4A43, #958676 */
+/* Color Schemes: Background  Button      Code     Nav+Bot */
+/* Orignal:       #F2F2F2    #FCDBC4      #F1E2B2  #CCE0DA */
+/* Nandal:        #f0efeb #fff1e6/#bcd4e6 #d6e2e9  #99c1de */
+/* New            #F2F2F2    #EAD7E7      #C4E6E7  #e0b0d5 */
+/* Orange:        #F2F2F2    #FCD5CE      #F9DCC4  #FFB5A7 */
+/* Old:           #F2F2F2    #dbe7e4      #eddcd2  #c5dedd */
+/* Brown:         #F2F2F2    #efe5dc      #f3d8c7  #d0b8ac */
 body {
+	color: #3B3B46;
 	max-width: 700px;
 	margin: 0;
-	margin-left:auto;
-	margin-right:auto;
+	margin-left: auto;
+	margin-right: auto;
 	background-color: #F2F2F2;
-	border: solid 1px #958676;
+	border: solid 1px #3B3B46;
 	border-radius: 7px;
 }
-h1, h2, h3 {
-	font-family: 'Gelasio', serif;
+#navbar {
+	border-radius: 7px 7px 0px 0px;
+	padding: 7px 7px; 
+	background-color: #C5DEDD;
 }
-
 .button {
-	background-color: #FCDBC4;
-	color: black;
-	border: solid 2px #392313;
+	background-color: #FFF1E6;
+	color: #000000;
+	border: solid 2px #3B3B46;
 	border-radius: 10px;
 	padding: 2px 10px;
 	text-decoration: none;
-	display: inline-block;
-	position: relative;
+	display: inline-block; 
+	position: relative; 
 	font-size: 1.25rem;
 	font-family: 'Gelasio', serif;
 	cursor: pointer;
 }
+h1, h2, h3 {
+	font-family: 'Gelasio', serif;
+}
+p, ul {
+	font-family: 'Roboto', sans-serif;
+}
+blockquote {
+	font-family: 'Fira Code', monospace;
+	padding: 5px 10px;
+	background-color: #EFEFC6;
+}
 .code {
 	font-family: 'Fira Code', monospace;
 	padding: 5px 10px;
-	background-color: #F1E2B2;
+	background-color: #EFEFC6;
 	overflow-x: scroll;
 	white-space: nowrap;
 }
-p {
-	font-family: 'Roboto', sans-serif;
-}
-ul {
-	font-family: 'Roboto', sans-serif;
-}
-#navbar {
-	border-radius: 7px 7px 0px 0px;
-    padding: 7px 7px;
-    background-color: #CCE0DA;
-}
-
 #data {
-	color: #3B3B46;
 	padding: 0px 10px;
 }
 footer {
 	border-radius: 0px 0px 7px 7px;
-	background-color: #C6B9C0;	
+	background-color: #C5DEDD;	
 }
 #bottomtext {
 	margin: 0px;
 	text-align: center;
 	padding: 10px;
-	color: #4C4A43;
 }
