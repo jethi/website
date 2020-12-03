@@ -24,53 +24,63 @@
         <p>
             A simple getgo [verison] is what I use to update my go installation. Works like charm so far.
         </p>
-		<pre class="code">
-			function getgo() {<br>
-                wget -P /tmp/ https://dl.google.com/go/go"$@".linux-amd64.tar.gz<br>
-                rm -rf ~/.local/go<br>
-                tar -C ~/.local -xzf /tmp/go"$@".linux-amd64.tar.gz<br>
-                rm -rf /tmp/go"$@".linux-amd64.tar.gz<br>
-                go version<br>
-            }<br>
-            alias g='amfora'<br>
-        </pre>
+		<pre>
+function getgo() {
+    wget -P /tmp/ https://dl.google.com/go/go"$@".linux-amd64.tar.gz
+    rm -rf ~/.local/go
+    tar -C ~/.local -xzf /tmp/go"$@".linux-amd64.tar.gz
+    rm -rf /tmp/go"$@".linux-amd64.tar.gz
+    go version
+}
+alias g='amfora'</pre>
+		<p>
+			For custom prompt. Add this and comment the part commented below it.
+		</p>
+		<pre>
+parse_git_branch() {
+ git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+if [ "$color_prompt" = yes ]; then
+ PS1='${debian_chroot:+($debian_chroot)}\[\033[00;35m\]\u\[\033[00;30m\]@\[\033[00;36m\]\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\$ '
+else
+ PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
+fi
+
+# if [ "$color_prompt" = yes ]; then
+#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+# else
+#     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+# fi
+# unset color_prompt force_color_prompt</pre>
         <hr>
         <h2> .profile </h2>
         <p>
             I usually place binaries like micro, amfora, youtube-dl in ~./local/bin (labeled as General below)
         </p>
-        <pre class="code">
-            # Go<br>
-            export PATH=$PATH:~/.local/go/bin
-            <br>
-            export GOPATH=$HOME/go
-            <br><br>
-            # General
-            <br>
-            export PATH=$PATH:~/.local/bin
-            <br><br>
-            # Flutter
-            <br>
-            export PATH=$PATH:~/.local/flutter/bin
-            <br>
-        </pre>
+        <pre>
+# Go
+export PATH=$PATH:~/.local/go/bin
+export GOPATH=$HOME/go
+# General
+export PATH=$PATH:~/.local/bin
+# Flutter
+export PATH=$PATH:~/.local/flutter/bin</pre>
         <hr>
         <h2> amfora </h2>
         <p>
             I use amfora for Gemini. But I don't like its default color scheme.
         </p>
-        <pre class="code">
-            bg = "#ffffd7"<br>
-            regular_text = "#808080"<br>
-            quote_text = "#808080"<br>
-            preformatted_text = "#808080"<br>
-            list_text = "#808080"<br>
-            hdg_1 = "#5f5f87"<br>
-            hdg_2 = "#5f5faf"<br>
-            hdg_3 = "#5f5fd7"<br>
-            amfora_link = "#875fd7"<br>
-            foreign_link = "#ff5f87"<br>
-        </pre>
+        <pre>
+bg = "#ffffd7"
+regular_text = "#808080"
+quote_text = "#808080"
+preformatted_text = "#808080"
+list_text = "#808080"
+hdg_1 = "#5f5f87"
+hdg_2 = "#5f5faf"
+hdg_3 = "#5f5fd7"
+amfora_link = "#875fd7"
+foreign_link = "#ff5f87"</pre>
 		<hr>
 		<p>
 			That's all folks.

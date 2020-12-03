@@ -42,15 +42,15 @@ p, ul {
 }
 blockquote {
 	font-family: 'Fira Code', monospace;
-	padding: 5px 10px;
+	padding: 5px 10px; 
 	background-color: #EFEFC6;
 }
-.code {
+pre {
 	font-family: 'Fira Code', monospace;
 	padding: 5px 10px;
 	background-color: #EFEFC6;
 	overflow-x: scroll;
-	white-space: nowrap;
+	/* white-space: nowrap; */
 }
 #data {
 	padding: 0px 10px;
