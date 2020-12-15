@@ -16,11 +16,13 @@ body {
 	border: solid 1px #3B3B46;
 	border-radius: 7px;
 }
+
 #navbar {
 	border-radius: 7px 7px 0px 0px;
 	padding: 7px 7px; 
 	background-color: #C5DEDD;
 }
+
 .button {
 	background-color: #FFF1E6;
 	color: #000000;
@@ -34,12 +36,19 @@ body {
 	font-family: 'Gelasio', serif;
 	cursor: pointer;
 }
+
 h1, h2, h3 {
 	font-family: 'Gelasio', serif;
 }
-p, ul {
+
+p, ul, a {
 	font-family: 'Roboto', sans-serif;
 }
+
+a {
+	text-decoration: none;
+}
+
 blockquote {
 	font-family: 'Fira Code', monospace;
 	padding: 5px 10px; 
@@ -50,15 +59,17 @@ pre {
 	padding: 5px 10px;
 	background-color: #EFEFC6;
 	overflow-x: scroll;
-	/* white-space: nowrap; */
 }
+
 #data {
 	padding: 0px 10px;
 }
+
 footer {
 	border-radius: 0px 0px 7px 7px;
 	background-color: #C5DEDD;	
 }
+
 #bottomtext {
 	margin: 0px;
 	text-align: center;
