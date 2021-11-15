@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
-    <title>Test1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./assets/style.css">
+	<link rel="shortcut icon" type="image/png" href="./assets/favicon.png"/>
+	<title>Home</title>
+
 </head>
 <body>
-    <div id="test"><h1>This is gonna be cool.</h1></div>
-    <br>
+	<nav id="navbar">
+		<a class="button" href="/">Home</a>
+		<a class="button" href="./blog.html">Blog</a>
+		<a class="button" href="./doc.html">Doc</a>
+		<a class="button" href="./about.html">About</a>
+	</nav>
+	<div id="data">
+		<h1>SiFl - Flying while keeping it simple.</h1>
+		<br/>
+		<p>
+			Welcome, have a nice stay. This website focuses on being simple yet efficient for providing information about me, programming, linux, automobiles and technology.
+		</p>
+		<br/>
+		<p>
+			The docs section is mostly for my personal use; however, you might find something useful there.
+		</p>
+		<br/>
+		<blockquote>
+			Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible you are, by definition, not smart enough to debug it.<br/>
+			<br/>
+			&nbsp; - Brian W. Kernighan and P. J. Plauger<br/>
+			The Elements of Programming Style
+		</blockquote>
+		<hr/>
+		<br/>
+		<h2>Other Info:</h2>
+		<br/>
+		<ul>
+			<li>This is an ad and tracker free static website with no JavaScript.</li>
+			<li>Source can be found at- https://github.com/jethi/website</li>
+			<li>Source code of this website is licensed under the ISC license.</li>
+		</ul>
+		<br/>
 
-    <div class="select">
-    <label for="colors">Choose a color:</label>
-    <select id="colors" onchange="colorFunc();">
-        <option value="red">Red</option>
-        <option value="blue" selected="selected">Blue</option>
-        <option value="yellow">Yellow</option>
-    </select>
-    <br>
-    </div>
-
-    <div class="select">
-    <label for="background">Choose background color:</label>
-    <select id="background" onchange="backgroundFunc();">
-        <option value="red" selected="selected">Red</option>
-        <option value="blue">Blue</option>
-        <option value="yellow">Yellow</option>
-    </select>
-    <br>
-    </div>
-
-    <div class="select">
-    <label for="cases">Choose a case:</label>
-    <select id="cases" onchange="caseFunc();">
-        <option value="uppercase" selected="selected">Uppercase</option>
-        <option value="lowercase">Lowercase</option>
-        <option value="capitalize">Capitalize</option>
-    </select>
-    <br>
-    </div>
-
+	</div>
+	<footer>
+		<p id="bottomtext">
+			Learn Humility and have Gratitude 🌱
+		</p>
+	</footer>
 </body>
 </html>
